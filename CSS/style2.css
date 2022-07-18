@@ -1,0 +1,23 @@
+label    {font-family: verdana,sans-serif; border-collapse: collapse; width: 150%;}
+body     {height: 950px;
+          background-color: #E2F1FF;
+          background-image: repeating-linear-gradient(#E2FDFF, #9bb1ff 30%, #788bff 20%, #9bb1ff 10%, #E2FDFF, #9bb1ff);}
+p        {height:75px; color:#BFD7FF;}
+address  {display:block; color: navy; font-style: italic; font-weight: bold; height: auto;}	
+fieldset {background-color: #BFD7FF;}
+legend   {background-color:#5465FF; color: #BFD7FF; padding: 5px 20px;}
+input    {margin: 10px; }
+div      {padding-top: 50px;  padding-right: 30px;  padding-bottom: 50px;  padding-left: 80px;  }
+/* If the screen size is 601px or more, set the font-size of to 80px */
+@media screen and (min-width: 601px) {
+      #container {
+            display:flex; font-size: 80px;
+      }
+}
+
+/* If the screen size is 600px or less, set the font-size of to 30px */
+@media screen and max-width: 600px) {
+      #container {
+            display:flex; font-size: 30px;
+      }
+}

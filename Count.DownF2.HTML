@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style> 
+p {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+
+body {
+ 
+   height: 950px;
+   background-color: #E2F1FF;
+   background-image: repeating-linear-gradient(#E2FDFF, #9bb1ff 30%, #788bff 20%, #9bb1ff 10%, #E2FDFF, #9bb1ff);
+
+}
+font-family: Verdana, sans-serif;
+body {
+  background-color: #5465FF;
+  color: blue;
+}
+
+h1 {
+  background-color: #5465ff;
+  color: white;
+  text-align: center;
+}
+
+h2 {  
+    text-align: center;
+}
+h3 {
+    border: 5px solid #5465ff;
+    width: 100 px;
+    text-align: center;
+}
+h4 {
+  color: white;
+  text-align: center;
+}
+
+div {
+  color: white;
+  text-align: center;
+  background-color: #5465ff;
+}
+.flex-container {
+  display: flex;
+  background-color: #5465ff;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  font-style: oblique;
+  color: blue;
+}
+span.b {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 25px; 
+  background-color: #5465ff; 
+}
+</style>
+
+</head>
+<body>
+<h1> *****  EMPLOYEE NEWSLETTER \ INFORMATIONAL PAGE ******  </h1> 
+<h2>Staff Summer Picnic </h2>
+<h3>Don't forget to sign up for donation!!!!             Get with Susie Q !!!  </h3>
+
+<p> Count down until August 5, 2022</p>
+<h4>Counting....</h4>
+<p id="Party"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 6, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="Party"
+  document.getElementById("Party").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("Party").innerHTML = "We made it to August 5, 2022";
+  }
+}, 1000);
+</script>
+<h4>Today is: </h4>
+<h4 id="demo"></h4>
+
+<script>
+const d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+<div class="flex-container">
+  <div>Trivia: Genuine smile is known as a Duchenne smile.   </div>
+  <div>Three kinds of smiles: smiles of reward, smiles of affiliation, and smiles of dominance. </div>
+  <div>A smile is formed primarily by flexing the muscles at the sides of the mouth. </div>  
+</div>
+<p>Customer Service Reminder: </p>
+
+<div><span class="b">Makes eye contact!</span> Know our Tenants! <span class="b"> Tenants are Valuable.</span> <span class="b">Thank our Tenants!</span> <span class="b">Make Tenant Feel Important.</span> Give Them More Than Expected.<span class="b"> Always Be Honest.</span>Be Positive.</div>
+<br>
+<p> Golden Rule: "Treat others as you would want to be treated." </p>
+
+<h2>JUST FOR FUN !!! </h2>
+<h4>HOW MANY STONES DO YOU WEIGHT ??? </h4>
+
+<h4>
+  <label>Your Weight (LBS) </label>
+  <input id="inputPounds" type="number" placeholder="Pounds" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">
+</h4>
+<h4>The amount of stones you carry around.... <span id="outputStones"></span></h4>
+
+<script>
+function weightConverter(valNum) {
+  document.getElementById("outputStones").innerHTML=valNum*0.071429;
+}
+</script>
+</body>
+</html>
+
+

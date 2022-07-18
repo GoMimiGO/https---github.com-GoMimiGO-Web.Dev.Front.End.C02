@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<Title> Upload Something </title>
+   <!--Style sheet-->
+   <link rel="stylesheet" type="text/css" href="CSS/style1.css">
+</head>
+<body>
+    <form method="post" action="/IMG/multi-file" enctype="multipart/form-data">
+	<input type="file" name="myfile" id"myfile" multiple><br>
+
+    </form>
+	<button id="submitFetch">SUBMIT WITH FETCH API</button>
+
+<script>
+    const formData = new FormData();
+    const photos = document.querySelector('input[type="file"][multiple]');
+
+	formData.append('title', 'Display Photos');
+		for (let i = 0; i < photos.files.length; i++) {	
+	formData.append(`photos_${i}`, photos.files[i]);
+}
+
+	fetch('//IMG/multiple-file', {
+ 		 method: 'POST',
+ 		 body: formData,
+	})
+		.then(response => response.json())
+		.then(result => {
+  		console.log('Success:', result);
+	})
+		.catch(error => {
+  		console.error('Error:', error);
+	});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<Title> Contact US </title>
+   <!--Style sheet-->
+   <link rel="stylesheet" type="text/css" href="CSS/style1.css">
+</head>
+<body>
+	<div id="leftcolumn">
+		<a class="navBar" href="index.html">Home</a> ||
+		<a class="navBar" href="Company.html"> Company Information</a>  ||
+		<a class="navBar" href="Health.Safety.html"> Health and Safety </a>  ||
+		<a class="navBar" href="Balanced.html"> Balanced Learning </a>  ||
+		<a class="navBar" href="Hours.html"> Hours of Operation </a>  ||
+		<a class="navBar" href="Contact.US.HTML"> Contact US </a>     ||
+	  </div>
+	<h1> <b> <i> Contact Us </i></b></h1>
+	<h3> Phone Number: 502-123-1234  </h3>
+	<address> Our Email: <a href="">mailto:RhodesCare@gmail.com</a>.<br>
+		 Find us at this address: 23 Got This Road, Working My Nerve, KY 78942-1234 </address>
+	<br><br>
+
+<form action="server url"method"get|post">
+	
+	<fieldset>
+		<legend> User Information </legend>
+
+		<label for='FullName'>Enter Full Name   </label> 
+		<input id='FullName' type='text' name='FullName'/>
+		<br><br>
+
+		<label for=Phone>Input Telephone Number (in format of xxx-xxx-xxxx) </label>
+		<input id='PhoneNumber' type='tel' name='telephone' pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'requiwhite/>
+		<br><br>
+
+		<label for="email">Enter email address</label> 
+		<input id='email' type="email" id="email" name="email"/>
+		<br><br>
+
+		<label for=mailing> Enter Mailing address: </label><textarea></textarea>
+
+		<br><br>
+	  	<label for="ContactMethod"> What us your preferred Contact Method: </label>
+		<input type="radio" id="byphone"     name="ContactMethod" value="BYPHONE">                  <label for="byphone">Phone</label>
+  		<input type="radio" id="byemail"     name="ContactMethod" value="BYEMAIL" checked="checked"><label for="byemail">Email</label>
+  		<input type="radio" id="postal"      name="ContactMethod" value="POSTAL">                   <label for="postal">Postal</label>
+		<br><br>
+		
+	        <label for=Class>What class would your child(ren) need? </label><br>
+		<input type="checkbox" name="CH1" value="child1">          <label for="CH1"> Infant (8 wks to 1 yr)</label><br>
+ 		<input type="checkbox" name="CH2" value="child2">           <label for="CH2"> Toddler (1 1/2 to 2 yrs)</label><br>
+ 		<input type="checkbox" name="CH3" value="child3" checked>  <label for="CH3"> Preschool (2yrs to 3yrs)</label>
+		<br><br>
+		<label for=enrollent>Prefer enrollment to begin: </label>
+		<input type="date" name="StartDate"/> Start Date 
+		<br><br>
+			<label>File Upload (ex: promotion flyer, referal information):   </label> 
+			<input type="file"name="newfile"><br>
+
+	<input id="submitButton" type="submit" value="Submit" onclick="submitForm()">
+</fieldset>
+</form>
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Child Information:</legend>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+<script> 
+
+	function submitForm(){
+		var FullName=document.getElementById("FullName");
+		if (FullName.value.length<1)
+		{			alert("Please enter a valid Name") 	};
+		var PhoneNumber=document.getElementById("PhoneNumber");
+		if (PhoneNumber.value.length<1)
+		{			alert("Please enter a valid Phone Number") 	};
+		var email=document.getElementById("email");
+		if (email.value.length<1)
+		{			alert("Please enter a valid Email") 	};
+
+		if (FullName.value.length>0 && PhoneNumber.value.length>0 && email.value.length>0){
+			alert("Form Successfully Submitted \nFullName: " +FullName.value+"\nPhonenumber: "+PhoneNumber.value+"\nEmail: "+email.value) 
+		}
+
+
+		/*var FullName=document.getElementById () 
+		var FullName=document.getElementById () */
+	
+	event.preventDefault()
+
+	}
+
+</script>
+</body>
+<div id="footer">
+	Copyright &copy; 2022 RhodesCare
+</div>
+</html>
+	
+
+
+		
+
+
