@@ -27,6 +27,7 @@ div {
 </style>
 
 </head>
+
 <body>
 
 <h4 id="Greet"></h4>
@@ -43,9 +44,36 @@ if (time < 10) {
 }
 document.getElementById("Greet").innerHTML = greeting;
 </script>
+
 <h1>This is a Heading</h1>
 <p>This page has a grey background color and a blue text.</p>
 <div>This is a div.</div>
+
+<script>
+
+function allowDrop(ev) {   ev.preventDefault();
+}
+
+function drag(ev) {   ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {   ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+
+<h2>Drag and Drop</h2>
+<p>Drag the image back and forth between the two div elements.</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="img\Blue.Wall.03.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
 
 </body>
 </html>
