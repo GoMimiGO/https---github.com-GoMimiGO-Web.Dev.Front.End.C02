@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<Title> Contact US </title>
+<Title> Maintenance Form </title>
    <!--Style sheet-->
    <link rel="stylesheet" type="text/css" href="CSS/style1.css">
 </head>
 <body>
 	<div id="leftcolumn">
 		<a class="navBar" href="index.html">Home</a> ||
-		<a class="navBar" href="Company.html"> Company Information</a>  ||
-		<a class="navBar" href="Health.Safety.html"> Health and Safety </a>  ||
-		<a class="navBar" href="Balanced.html"> Balanced Learning </a>  ||
-		<a class="navBar" href="Hours.html"> Hours of Operation </a>  ||
+		<a class="navBar" href="Count.DownF2.HTML"> Employee News</a>  ||
+		<a class="navBar" href="Form.F3.HTML"> Tenant Maintenance </a>  ||
+		<a class="navBar" href="Graphic F5.html"> Income vs Expense </a>  ||
+	        <a class="navBar" href="Get.Data.F4.HTML"> Data Information </a>     ||
+                <a class="navBar" href="Hours.html"> Hours of Operation </a>  ||
 		<a class="navBar" href="Contact.US.HTML"> Contact US </a>     ||
 	  </div>
-	<h1> <b> <i> Contact Us </i></b></h1>
+	<h1> <b> <i> Maintenance Form (Tenant) </i></b></h1>
 	<h3> Phone Number: 502-123-1234  </h3>
 	<address> Our Email: <a href="">mailto:RhodesCare@gmail.com</a>.<br>
 		 Find us at this address: 23 Got This Road, Working My Nerve, KY 78942-1234 </address>
-	<br><br>
+	<h4> Response on Maintenance request is 24 hours from Monday through Friday and as soon as possible over the weekend. </h4>
+        <br><br>
 
 <form action="server url"method"get|post">
 	
 	<fieldset>
 		<legend> User Information </legend>
 
-		<label for='FullName'>Enter Full Name   </label> 
+		<label for='FullName'>Enter Tenant Full Name   </label> 
 		<input id='FullName' type='text' name='FullName'/>
 		<br><br>
 
-		<label for=Phone>Input Telephone Number (in format of xxx-xxx-xxxx) </label>
+		<label for=Phone>Tenant Contact Telephone Number (in format of xxx-xxx-xxxx) </label>
 		<input id='PhoneNumber' type='tel' name='telephone' pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'requiwhite/>
 		<br><br>
 
-		<label for="email">Enter email address</label> 
+		<label for="email">Enter Tenant email address</label> 
 		<input id='email' type="email" id="email" name="email"/>
 		<br><br>
 
-		<label for=mailing> Enter Mailing address: </label><textarea></textarea>
+
+		<label for=mailing> Enter Tenant Resident address: </label><textarea></textarea>		
+                <label for=mailing> Enter Tenant Mailing address: </label><textarea></textarea>
 
 		<br><br>
 	  	<label for="ContactMethod"> What us your preferred Contact Method: </label>
@@ -46,32 +50,31 @@
   		<input type="radio" id="postal"      name="ContactMethod" value="POSTAL">                   <label for="postal">Postal</label>
 		<br><br>
 		
-	        <label for=Class>What class would your child(ren) need? </label><br>
-		<input type="checkbox" name="CH1" value="child1">          <label for="CH1"> Infant (8 wks to 1 yr)</label><br>
- 		<input type="checkbox" name="CH2" value="child2">           <label for="CH2"> Toddler (1 1/2 to 2 yrs)</label><br>
- 		<input type="checkbox" name="CH3" value="child3" checked>  <label for="CH3"> Preschool (2yrs to 3yrs)</label>
+		
+                <label for=Description> Description of Issue: </label><textarea></textarea>
+                <br><br>
+
+                <label for='Problem'>What Room is issue in?  </label> 
+		<input id='Problem' type='text' name='Problem'/>
 		<br><br>
-		<label for=enrollent>Prefer enrollment to begin: </label>
-		<input type="date" name="StartDate"/> Start Date 
+
+	        <label for=enrollent>Prefer date of enter to resident to resolve issue: </label>
+		<input type="date" name="StartDate"/> (Date) 
 		<br><br>
-			<label>File Upload (ex: promotion flyer, referal information):   </label> 
+
+                <label for=Class>Preferred time of day:  </label><br>
+		<input type="checkbox" name="CH1" value="child1">          <label for="CH1"> Morning   (8:30 am  until 11:30 am) </label><br>
+ 		<input type="checkbox" name="CH2" value="child2">          <label for="CH2"> Noon      (11:30 am until 1:30 am) </label><br>
+ 		<input type="checkbox" name="CH3" value="child3" checked>  <label for="CH3"> Afternoon (1:30 am  until 5:00 pm) </label>
+		<br><br>
+
+			<label>File Upload: Picture of issue   </label> 
 			<input type="file"name="newfile"><br>
 
 	<input id="submitButton" type="submit" value="Submit" onclick="submitForm()">
 </fieldset>
 </form>
-<form action="/action_page.php">
-  <fieldset>
-    <legend>Child Information:</legend>
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <label for="birthday">Birthday:</label>
-    <input type="date" id="birthday" name="birthday"><br><br>
-    <input type="submit" value="Submit">
-  </fieldset>
-</form>
+
 <script> 
 
 	function submitForm(){
