@@ -21,20 +21,27 @@ Create a Property management site that employees can access and update informati
                 Expenses of what is spent to maintain the property.  
                 Graph to show a visual of the gains and losses of the property 
 
+
 Features List:
 1.	Build a conversion tool that converts user input to another type and displays it (ex: converts cups to grams)
-2.	Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)
-3.	Create a form and save the values (on click of Submit button) to an external file 
-     3a.	You must show us or document where that information is being stored so we can confirm that it’s being saved/persisted
-4.	Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX)
-5.	Visualize data in a graph, chart, or other visual representation of data
+	1a. Conversion of pounds to stone count on Employee Newsletter page (Count.DownF2.HTML)
 
-Responsive design through the use of media queries, CSS Grid, Flexbox, and/or other similar approaches:  
-*	Flexbox query to respond to mobile access to tablet access 
+2.	Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)
+	2a. Displays today's date on Employee Newletter page (Count.DownF2.HTML)
+	2b. Count to an event on Employee Newletter page (Count.DownF2.HTML)
+
+3.	Create a form and save the values (on click of Submit button) to an external file 
+3.1	You must show us or document where that information is being stored so we can confirm that it’s being saved/persisted
+
+4.	Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX)
+
+5.	Visualize data in a graph, chart, or other visual representation of data
+	5a. Vertical, Horizontal and Pie Graph to give visual interpretation of data on Income and Expenses page (Graphic F5.html)
+
 
 Visually features:
-*	Color scheme – 5465FF, 788BFF, 9BB1FF, BFD7FF, E2FDFF
-*	Font – Verdana-based sans serif stack: font-family: 
+•	Color scheme – 5465FF, 788BFF, 9BB1FF, BFD7FF, E2FDFF
+•	Font – Verdana-based sans serif stack: font-family: 
 
 ______________________________________________________________________________
 -- Final Project for Front End Development - Website Development 2nd class -May 2022
