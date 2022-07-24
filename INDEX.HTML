@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--Style sheet-->
+   <link rel="stylesheet" type="text/css" href="CSS/Nav.css">
+
 <style> 
 body {
  
@@ -15,6 +19,77 @@ body {
   color: blue;
 }
 
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #9bb1ff;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #e2fdff;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #788bff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: black;}
+
 h1 {
   background-color: #5465ff;
   color: white;
@@ -24,11 +99,130 @@ div {
   background-color: #788BFF;
   color: white;
 }
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #bfd7ff;
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.container {
+  border: 2px solid #bfdff;
+  background-color: #5465ff;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .container {
+      text-align: center;
+  }
+  .container img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+
+
+
 </style>
 
 </head>
-
 <body>
+
+   <!--Navigation Bar-->
+
+<ul class="navigation">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Products</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+
+
+   <!--Greeting depending on time of day -->
 
 <h4 id="Greet"></h4>
 
@@ -45,35 +239,122 @@ if (time < 10) {
 document.getElementById("Greet").innerHTML = greeting;
 </script>
 
-<h1>This is a Heading</h1>
-<p>This page has a grey background color and a blue text.</p>
-<div>This is a div.</div>
 
-<script>
+   <!--Information -->
 
-function allowDrop(ev) {   ev.preventDefault();
-}
+<h1>Training Section </h1>
+<p>Your training is due on OCTOBER 20, 2022... </p>
 
-function drag(ev) {   ev.dataTransfer.setData("text", ev.target.id);
-}
+<div>Follow these Steps: </div>
 
-function drop(ev) {   ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
+<div class="slideshow-container">
 
-</script>
-
-<h2>Drag and Drop</h2>
-<p>Drag the image back and forth between the two div elements.</p>
-
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <img src="img\Blue.Wall.03.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="98" height="51">
+<div class="mySlides">
+  <img src="img/Step1.jpg" alt="Avatar" style="width:90px">
+  <q>“Let your unique awesomeness and positive energy inspire confidence in others.” </q>
+  <p class="author">- Sample 1 Day </p>
 </div>
 
-<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="mySlides">
+  <img src="img/Step2.png" alt="Avatar" style="width:90px">
+  <q> “Wherever you go, no matter what the weather, always bring your own sunshine.”</q>
+  <p class="author">- Sample 2 Day</p>
+</div>
+
+<div class="mySlides">
+  <img src="img/Step3.gif" alt="Avatar" style="width:90px">
+  <q>“Success is the sum of small efforts repeated day in and day out.”</q>
+  <p class="author">- Sample 3 Day</p>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<h2>Thoughts of the WEEK !!! </h2>
+<p>Some one had a thought this week... </p>
+
+<div class="container">
+  <img src="img/Blue.Wall.01.jpg" alt="Avatar" style="width:90px">
+  <p><span>Chris S. </span> Optimism is the faith that leads to achievement. ...</p>
+  <p>If you're going through hell, keep going.</p>
+</div>
+
+<div class="container">
+  <img src="IMG/Image01blue.jpg" alt="Avatar" style="width:90px">
+  <p><span>Joe Sam </span> It always seems impossible until it's done. ...</p>
+  <p>It does not matter how slowly you go as long as you do not stop. ...</p>
+</div>
+
+<h3>Popup Chat Window </h3>
+<p>“Knowledge is power.” – ...</p>
 
 
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
 
 </body>
+<footer>
+<div id="footer">
+	Copyright &copy; 2022 RhodesCare
+</div>
+<br>
+<br>
+</footer>
 </html>
