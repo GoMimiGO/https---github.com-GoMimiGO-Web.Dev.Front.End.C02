@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<title>Graphs</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9bb1ff;	
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #788bff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #5465ff;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #e2fdff;
+  color: black;
+}
+
+/* H1 settings */
+
+#myHeader {
+  background-color: #788bff;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<div class="header">
+  <h1>Visual of Income vs Expenses</h1>
+  <p>Property data displayed for visual effect... </p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+
+ <!-- COLUMN ON LEFT -->
+<div class="row">
+  <div class="column">
+    <h2>Display Vertical Chart</h2>
+
+<canvas id="myChartHoward" 	style="width:100%;max-width:600px"></canvas>
+ <!--Vertical Chart-->
+<script>
+var xValues = ["Rent", "Taxes&INS", "Repair"];
+var yValues = [6100, 1100, 2144];
+var barColors = ["green", "brown","red"];
+
+new Chart("myChartHoward", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "1234 Howard BLVD"
+    }
+  }
+});
+</script>
+    <p>HOWARD RENTAL INFORMATION </p>
+  </div>
+  
+
+ <!-- COLUMN IN CENTER -->
+  <div class="column">
+    <h2>Display Pie Chart </h2>
+
+<!--PIE Chart-->
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = ["Howard-Rent", "Wilson-Rent", "Howard-T&I", "Wilson-T&I","Howard-Repairs", "Wilson-Repairs"];
+var yValues = [6155, 6100, 1249, 1100, 3044, 2144];
+var barColors = [
+  "#b91d47",
+  "#FF1493",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Income, Tax&Insurance and Repairs"
+    }
+  }
+});
+</script>
+    <p>COMPARISON CHART FOR BOTH PROPERTIES.</p>
+  </div>
+  
+
+ <!-- COLUMN ON RIGHT -->
+  <div class="column">
+    <h2>Display Horizontal Chart </h2>
+<canvas id="myHorzontalWilson" 	style="width:100%;max-width:600px"></canvas>
+
+ <!--Horizontal Chart-->
+<script>
+var xValues = ["Rent", "Taxes&INS", "Repair"];
+var yValues = [6155, 1249, 3044];
+var barColors = ["green", "brown","red"];
+
+new Chart("myHorzontalWilson", {
+  type: "horizontalBar",
+  data: {
+  labels: xValues,
+  datasets: [{
+    backgroundColor: barColors,
+    data: yValues
+  }]
+},
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2022 Wilson Crossing"
+    },
+    scales: {
+      xAxes: [{ticks: {min: 1000, max:7000}}]
+    }
+  }
+});
+</script>
+
+    <p>WILSON RENTAL INFORMATION </p>
+  </div>
+</div>
+
+</body>
+<br>
+<br>
+<footer>
+<div id="footer">
+	Copyright &copy; 2022 RhodesCare
+</div>
+<br>
+<br>
+</footer>
+</html>
