@@ -18,7 +18,7 @@ body {
  
    height: 950px;
    background-color: #E2F1FF;
-   background-image: repeating-linear-gradient(#E2FDFF, #9bb1ff 30%, #788bff 20%, #9bb1ff 10%, #E2FDFF, #9bb1ff);
+   background-image: repeating-linear-gradient(#E2FDFF, #9bb1ff 30%, #788bff 30%, #9bb1ff 20%, #E2FDFF, #9bb1ff);
 
 }
 font-family: Verdana, sans-serif;
@@ -42,9 +42,32 @@ h3 {
     text-align: center;
 }
 h4 {
-  color: white;
+  color: blue;
   text-align: center;
 }
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #5465ff;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #e2fdff;
+  color: black;
+}
+
 
 div {
   color: white;
@@ -66,16 +89,22 @@ div {
 span.b {
   display: inline-block;
   width: 100px;
-  height: 100px;
+  height: 50px;
   padding: 5px;
-  border-radius: 25px; 
+  border-radius: 10px; 
   background-color: #5465ff; 
 }
+
 </style>
 
 </head>
 <body>
 <h1> *****  EMPLOYEE NEWSLETTER \ INFORMATIONAL PAGE ******  </h1> 
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
 <h2>Staff Summer Picnic </h2>
 <h3>Don't forget to sign up for donation!!!!             Get with Susie Q !!!  </h3>
 
@@ -114,6 +143,7 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+
 <h4>Today is: </h4>
 <h4 id="demo"></h4>
 
@@ -127,11 +157,10 @@ document.getElementById("demo").innerHTML = d;
   <div>Three kinds of smiles: smiles of reward, smiles of affiliation, and smiles of dominance. </div>
   <div>A smile is formed primarily by flexing the muscles at the sides of the mouth. </div>  
 </div>
+<br>
 <p>Customer Service Reminder: </p>
 
 <div><span class="b">Makes eye contact!</span> Know our Tenants! <span class="b"> Tenants are Valuable.</span> <span class="b">Thank our Tenants!</span> <span class="b">Make Tenant Feel Important.</span> Give Them More Than Expected.<span class="b"> Always Be Honest.</span>Be Positive.</div>
-<br>
-<p> Golden Rule: "Treat others as you would want to be treated." </p>
 
 <h2>JUST FOR FUN !!! </h2>
 <h4>HOW MANY STONES DO YOU WEIGHT ??? </h4>
@@ -140,22 +169,32 @@ document.getElementById("demo").innerHTML = d;
   <label>Your Weight (LBS) </label>
   <input id="inputPounds" type="number" placeholder="Pounds" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">
 </h4>
+
 <h4>The amount of stones you carry around.... <span id="outputStones"></span></h4>
 
    <!--Conversion of a person weight to stones -->
 <script>
 function weightConverter(valNum) {
   document.getElementById("outputStones").innerHTML=valNum*0.071429;
+
 }
-
 </script>
-
-<br>
-<br>
 <br>
 <br>
 
+<p> Golden Rule: "Treat others as you would want to be treated." </p>
+
+<br>
+<br>
 </body>
+
+<footer>
+<div id="footer">
+	Copyright &copy; 2022 RhodesCare
+</div>
+<br>
+<br>
+</footer>
 </html>
 
 
