@@ -24,11 +24,11 @@ Create a Property management site that employees can access and update informati
 
 Features List:
 1.	Build a conversion tool that converts user input to another type and displays it (ex: converts cups to grams)
-	1a. Conversion of pounds to stone count on Employee Newsletter page (Count.DownF2.HTML)
+	1a. Conversion of pounds to stone count on Employee Newsletter page (ConversionF1Countdownf2.HTML)
 
 2.	Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)
-	2a. Displays today's date on Employee Newletter page (Count.DownF2.HTML)
-	2b. Count to an event on Employee Newletter page (Count.DownF2.HTML)
+	2a. Displays today's date on Employee Newletter page (ConversionF1Countdownf2.HTML)
+	2b. Count to an event on Employee Newletter page (ConversionF1Countdownf2.HTML)
 
 3.	Create a form and save the values (on click of Submit button) to an external file 
 3.1	You must show us or document where that information is being stored so we can confirm that it’s being saved/persisted
@@ -36,7 +36,7 @@ Features List:
 4.	Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX)
 
 5.	Visualize data in a graph, chart, or other visual representation of data
-	5a. Vertical, Horizontal and Pie Graph to give visual interpretation of data on Income and Expenses page (Graphic F5.html)
+	5a. Vertical, Horizontal and Pie Graph to give visual interpretation of data on Income and Expenses page (GraphicF5.html)
 
 
 Visually features:
