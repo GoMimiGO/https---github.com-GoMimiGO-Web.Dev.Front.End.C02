@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9bb1ff;	
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #788bff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #5465ff;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #e2fdff;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Header</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+ <!-- Navigation Bar -->
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="ConversionF1Countdownf2.HTML"> Employee News</a>
+  <a href="FormF3.HTML"> Tenant Maintenance</a>
+  <a href="GraphsF5.HTML"> Income vs Expense </a>
+  <a href="3Column.HTML"> Data Information </a>
+</div>
+
+ <!-- COLUMN ON LEFT -->
+<div class="row">
+  <div class="column">
+    <h2>Column</h2>
+    <p>Please read this document in full. Make sure to ask any questions before the project is due. If
+there is any confusion please ask a mentor or a member of the Code Louisville staff.
+The purpose of the capstone project is to reinforce what you’ve learned and show off your skills.
+Your projects will be your go-to tool to show off to potential employers and demonstrate your
+knowledge. Projects should show that you have a good understanding of JavaScript, it’s
+methods and implementation.</p>
+  </div>
+  
+
+ <!-- COLUMN IN CENTER -->
+  <div class="column">
+    <h2>Column</h2>
+    <p>REQUIREMENTS:
+The below items are the requirements for your personal project for the JavaScript class.
+Projects are graded on a pass/fail system, thus every requirement must be met in order for
+your project to pass. You should discuss your project/plan with mentors regularly to ensure
+you’re on the right path to passing.</p>
+  </div>
+  
+
+ <!-- COLUMN ON RIGHT -->
+  <div class="column">
+    <h2>Column</h2>
+    <p>Project Requirements Overview:
+Create an application that demonstrates your knowledge of the JavaScript development skills
+you’ve been learning. This application can be anything of your choosing as long as it
+demonstrates the below requirements.</p>
+  </div>
+</div>
+
+<!-- The `multiple` attribute lets users select multiple files. -->
+<input type="file" id="file-selector" multiple>
+<script>
+  const fileSelector = document.getElementById('file-selector');
+  fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    console.log(fileList);
+  });
+</script>
+
+<!-- (A) LOAD FILE SAVER -->
+
+<script>
+async function saveFile() {
+  // (A) CREATE BLOB OBJECT
+  var myBlob = new Blob(["One of my features. Testing the Save function... "], {type: "text/plain"});
+ 
+  // (B) FILE HANDLER & FILE STREAM
+  const fileHandle = await window.showSaveFilePicker({
+    types: [{
+      description: "Text file",
+      accept: {"text/plain": [".txt"]}
+    }]
+  });
+  const fileStream = await fileHandle.createWritable();
+ 
+  // (C) WRITE FILE
+  await fileStream.write(myBlob);
+  await fileStream.close();
+}
+</script>
+
+<input type="button" value="Save File" onclick="saveFile()"/>
+</body>
+
+<footer>
+<br>
+<div id="footer">
+	Copyright &copy; 2022 RhodesCare
+</div>
+<br>
+
+</footer>
+</html>

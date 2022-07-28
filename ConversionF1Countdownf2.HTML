@@ -18,14 +18,11 @@ body {
  
    height: 950px;
    background-color: #E2F1FF;
-   background-image: repeating-linear-gradient(#E2FDFF, #9bb1ff 30%, #788bff 30%, #9bb1ff 20%, #E2FDFF, #9bb1ff);
+   background-image: repeating-linear-gradient(#E2FDFF, #9bb1ff 40%, #788bff 20%, #9bb1ff 60%, #E2FDFF, #9bb1ff);
+   font-family: Verdana, sans-serif;
+}
 
-}
-font-family: Verdana, sans-serif;
-body {
-  background-color: #5465FF;
-  color: blue;
-}
+
 
 h1 {
   background-color: #5465ff;
@@ -42,8 +39,12 @@ h3 {
     text-align: center;
 }
 h4 {
-  color: blue;
+  color: white;
   text-align: center;
+}
+
+#a {background-color: #9bb1ff;
+
 }
 
 /* Style the top navigation bar */
@@ -89,22 +90,29 @@ div {
 span.b {
   display: inline-block;
   width: 100px;
-  height: 50px;
+  height: 65px;
   padding: 5px;
-  border-radius: 10px; 
+  border-radius: 25px; 
   background-color: #5465ff; 
 }
+
 
 </style>
 
 </head>
 <body>
-<h1> *****  EMPLOYEE NEWSLETTER \ INFORMATIONAL PAGE ******  </h1> 
+
+ <!-- Navigation Bar -->
 <div class="topnav">
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
+  <a href="index.html">Home</a>
+  <a href="ConversionF1Countdownf2.HTML"> Employee News</a>
+  <a href="FormF3.HTML"> Tenant Maintenance</a>
+  <a href="GraphsF5.HTML"> Income vs Expense </a>
+  <a href="3Column.HTML"> Data Information </a>
 </div>
+
+<h1> *****  EMPLOYEE NEWSLETTER \ INFORMATIONAL PAGE ******  </h1> 
+
 <h2>Staff Summer Picnic </h2>
 <h3>Don't forget to sign up for donation!!!!             Get with Susie Q !!!  </h3>
 
@@ -143,7 +151,6 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-
 <h4>Today is: </h4>
 <h4 id="demo"></h4>
 
@@ -157,7 +164,6 @@ document.getElementById("demo").innerHTML = d;
   <div>Three kinds of smiles: smiles of reward, smiles of affiliation, and smiles of dominance. </div>
   <div>A smile is formed primarily by flexing the muscles at the sides of the mouth. </div>  
 </div>
-<br>
 <p>Customer Service Reminder: </p>
 
 <div><span class="b">Makes eye contact!</span> Know our Tenants! <span class="b"> Tenants are Valuable.</span> <span class="b">Thank our Tenants!</span> <span class="b">Make Tenant Feel Important.</span> Give Them More Than Expected.<span class="b"> Always Be Honest.</span>Be Positive.</div>
@@ -170,7 +176,7 @@ document.getElementById("demo").innerHTML = d;
   <input id="inputPounds" type="number" placeholder="Pounds" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">
 </h4>
 
-<h4>The amount of stones you carry around.... <span id="outputStones"></span></h4>
+<h4 id="a">The amount of stones you carry around.... <span id="outputStones"></span></h4>
 
    <!--Conversion of a person weight to stones -->
 <script>
@@ -178,16 +184,13 @@ function weightConverter(valNum) {
   document.getElementById("outputStones").innerHTML=valNum*0.071429;
 
 }
-</script>
-<br>
-<br>
 
+</script>
 <p> Golden Rule: "Treat others as you would want to be treated." </p>
 
 <br>
 <br>
 </body>
-
 <footer>
 <div id="footer">
 	Copyright &copy; 2022 RhodesCare
