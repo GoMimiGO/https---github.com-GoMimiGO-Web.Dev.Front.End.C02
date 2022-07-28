@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<Title> Maintenance Form </title>
+   <!--Style sheet-->
+   <link rel="stylesheet" type="text/css" href="CSS/style1.css">
+</head>
+
+<style>
+p {color: black;
+}
+
+.myInput {color: black;
+}
+textArea {  resize: none; 
+}
+
+</style>
+<body>
+	<div id="leftcolumn">
+		<a class="navBar" href="index.html">Home</a> ||
+		<a class="navBar" href="ConversionF1Countdownf2.HTML"> Employee News</a>  ||
+		<a class="navBar" href="FormF3.HTML"> Tenant Maintenance </a>  ||
+		<a class="navBar" href="GraphsF5.HTML"> Income vs Expense </a>  ||
+	        <a class="navBar" href="3Column.HTML"> Data Information </a>     ||
+
+	  </div>
+	<h1> <b> <i> Maintenance Form (Tenant) </i></b></h1>
+	<h3> Phone Number: 502-123-1234  </h3>
+	<address> Our Email: <a href="">mailto:RhodesCare@gmail.com</a>.<br>
+		 Find us at this address: 23 Got This Road, Working My Nerve, KY 78942-1234 </address>
+	<h4> Response on Maintenance request is 24 hours from Monday through Friday and as soon as possible over the weekend. </h4>
+        <br><br>
+
+<form action="server url"method"get|post">
+	
+	<fieldset>
+		<legend> User Information </legend>
+
+		<label for='FullName'>Enter Tenant Full Name   </label> 
+		<input id='FullName' type='text' name='FullName' required/>
+		<br>
+
+		<label for=Phone>Tenant Contact Telephone Number (in format of xxx-xxx-xxxx) </label>
+		<input id='PhoneNumber' type='tel' name='telephone' pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'requiwhite/>
+		<br>
+
+		<label for="email">Enter Tenant email address</label> 
+		<input id='email' type="email" id="email" name="email" required/>
+		<br>
+
+		<label for=resident>Enter Tenant Resident address: </label><textarea>  </textarea>		
+                <br>
+                <label for=mailing> Enter Tenant Mailing address:  </label><textarea>  </textarea>
+
+		<br><br>
+	  	<label for="ContactMethod"> What us your preferred Contact Method: </label>
+		<input type="radio" id="byphone"     name="ContactMethod" value="BYPHONE">                  <label for="byphone">Phone</label>
+  		<input type="radio" id="byemail"     name="ContactMethod" value="BYEMAIL" checked="checked"><label for="byemail">Email</label>
+  		<input type="radio" id="postal"      name="ContactMethod" value="POSTAL">                   <label for="postal">Postal</label>
+
+                <br><br>
+                <label for='Problem'>What Room is the issue in?  </label> 
+		<input id='Problem' type='text' name='Problem'/>
+
+	
+   <!--word count -->
+<div>
+  <label for="describe"> Description of Issue: </label>
+  <textarea onChange="" id="describe" name="describe" rows="6" cols="100" required></textarea> 
+  <div id="countText">Total words: 0</div>
+</div>
+
+
+<script>
+const textArea = document.getElementById('describe');
+textArea.addEventListener('input', () => {
+    var textLn =  textArea.value;
+    document.getElementById('countText').innerHTML='Total words: '+getWordCount(textLn);
+});
+
+function getWordCount(str) {
+     return str.trim().split(/\s+/).length;
+}
+</script>
+
+
+
+	        <label for=enrollent>Prefer date of enter to resident to resolve issue: </label>
+		<input type="date" name="StartDate"/> (Date) 
+		<br><br>
+
+                <label for=Class>Preferred time of day:  </label><br>
+		<input type="checkbox" name="CH1" value="TIME1">          <label for="CH1"> Morning   (8:30 am  until 11:30 am) </label><br>
+ 		<input type="checkbox" name="CH2" value="TIME2">          <label for="CH2"> Noon      (11:30 am until 1:30 am)  </label><br>
+ 		<input type="checkbox" name="CH3" value="TIME3" checked>  <label for="CH3"> Afternoon (1:30 am  until 5:00 pm)  </label>
+		<br><br>
+
+			<label>File Upload: Picture of issue   </label> 
+			<input type="file"name="newfile"><br>
+
+	<input id="submitButton" type="submit" value="Submit" onclick="submitForm()">
+</fieldset>
+</form>
+
+
+   <!--Alerts pop up -->
+<script> 
+
+	function submitForm(){
+		var FullName=document.getElementById("FullName");
+		if (FullName.value.length<1)
+		{			alert("Please enter a valid Name") };
+
+		var PhoneNumber=document.getElementById("PhoneNumber");
+		if (PhoneNumber.value.length<1)
+		{			alert("Please enter a valid 10 digit Phone Number") };
+
+		var email=document.getElementById("email");
+		if (email.value.length<1)
+		{			alert("Please enter a valid Email") };
+
+
+		
+
+
+		var describe=document.getElementById("describe");
+		if (describe.value.length<1)
+		{			alert("Please enter issue ") };
+
+
+		if (FullName.value.length>0 && PhoneNumber.value.length>0 && email.value.length>0){
+			alert("Form Successfully Submitted \nFullName: " +FullName.value+"\nPhonenumber: "+PhoneNumber.value+"\nEmail: "+email.value) 
+		}
+
+		/*var FullName=document.getElementById () 
+		var FullName=document.getElementById () */
+	
+	event.preventDefault()
+
+	}
+
+</script>
+
+   <!--Find the building Maintence person-->
+
+<p> **************************************************************************</p>
+<p>Enter building letter to see Maintenance person name: a, b, c, d or e?</p>
+
+<input id="myInput" type="text">
+
+<button onclick="myFunction()">Click to get Name </button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var letter = document.getElementById("myInput").value;
+  var text;
+
+  // If the Bldg is "c"
+  if (letter === "c") {
+    text = "James Downsings";
+    
+  // If the Bldg is "b" or "d"
+  } else if (letter === "b" || letter === "d") {
+    text = "Jessica Smaller";
+    
+  // If the Blgd is anything else
+  } else {
+    text = "Daniel Spoon";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+
+   <!--The End of ... Footer -->
+
+<footer>
+<div id="footer">
+	Copyright &copy; 2022 RhodesCare
+</div>
+</footer>
+
+</html>
+	
+
+
+		
+
+
