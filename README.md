@@ -32,11 +32,28 @@ Features List:
 
 3.	Create a form and save the values (on click of Submit button) to an external file 
 3.1	You must show us or document where that information is being stored so we can confirm that it’s being saved/persisted
+	3a. Fill out form and alert pop up sucessful submit (FormF3.HTML)
+	3b. Save Data to file (FormF3.HTML)  DID NOT GET FEATURE TO WORK - (Save page data)
+    3c. Save to file hard coded data.  (3column.html) (Working feature)
+		    3i.    Click "Save File" button  
+            3ii.   Pick a folder to save to. 
+	        3iii.  Open file form saved folder
+            3iiii. Content should contain: One of my features. Testing the Save function...
+         
 
 4.	Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX)
+    4a. Pull in data from file (3Column.HTML) - DID NOT GET FEATURE TO WORK- Data does not display or pull data content onto page.
+	4b. However files says it has been uploaded.  (3Column.HTML)
+              4i.    Click "Choose Files" button 
+              4ii.   Select single\multiple File 
+              4ii.   Click "Open" button
+              4ii.   Text by button "No file chosen" will change to file name if single selected or number of files if multiple selected
 
 5.	Visualize data in a graph, chart, or other visual representation of data
-	5a. Vertical, Horizontal and Pie Graph to give visual interpretation of data on Income and Expenses page (GraphicF5.html)
+	5a. Vertical, Horizontal and Pie Graph to give visual interpretation of data on Income and Expenses page (GraphsF5.HTML)
+
+6.  Analyze text and display information about it (ex: how many words in a paragraph)
+	6a.  When you type in the description of the issue it count how many words was used. (FormF3.HTML)
 
 
 Visually features:
